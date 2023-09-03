@@ -17,7 +17,12 @@ export const RegistrationForm = ({ navigation }) => {
   const [hidePass, setHidePass] = useState(true);
 
   return (
-    <View style={styles.content}>
+    <View
+      style={[
+        styles.inner,
+        activeInput && { ...styles.inner, marginBottom: 145 },
+      ]}
+    >
       <View style={styles.avatar}>
         <Image style={styles.photo} />
         <TouchableOpacity
@@ -125,13 +130,14 @@ export const RegistrationForm = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  content: {
+  inner: {
     position: "relative",
     marginTop: "auto",
+    paddingTop: 32,
     paddingHorizontal: 16,
-    backgroundColor: "#ffffff",
-    borderTopRightRadius: 25,
     borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
+    backgroundColor: "#FFFFFF",
   },
   avatar: {
     position: "absolute",

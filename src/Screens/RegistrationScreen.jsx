@@ -3,14 +3,15 @@ import {
   ImageBackground,
   Keyboard,
   KeyboardAvoidingView,
+  Platform,
   StyleSheet,
   TouchableWithoutFeedback,
   View,
 } from "react-native";
 import { StatusBar } from "expo-status-bar";
-import { LoginForm } from "../components/LoginForm";
+import { RegistrationForm } from "../components/RegistrationForm";
 
-const LoginScreen = ({ navigation }) => {
+const RegistrationScreen = ({ navigation }) => {
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
       <View style={styles.container}>
@@ -19,12 +20,15 @@ const LoginScreen = ({ navigation }) => {
           source={require("../images/photo-bg.png")}
           style={styles.image}
         >
-          <KeyboardAvoidingView
-            behavior={Platform.OS === "ios" ? "padding" : "height"}
-            keyboardVerticalOffset={0}
-          >
-            <LoginForm navigation={navigation} />
-          </KeyboardAvoidingView>
+          <View style={styles.box}>
+            <KeyboardAvoidingView
+              style={styles.keyboard}
+              behavior={Platform.OS === "ios" ? "padding" : "height"}
+              keyboardVerticalOffset={-290}
+            >
+              <RegistrationForm navigation={navigation} />
+            </KeyboardAvoidingView>
+          </View>
         </ImageBackground>
       </View>
     </TouchableWithoutFeedback>
@@ -41,6 +45,12 @@ const styles = StyleSheet.create({
     resizeMode: "cover",
     justifyContent: "flex-end",
   },
+  box: {
+    flex: 1,
+  },
+  keyboard: {
+    flex: 1,
+  },
 });
 
-export default LoginScreen;
+export default RegistrationScreen;

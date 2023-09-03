@@ -14,9 +14,13 @@ export const LoginForm = ({ navigation }) => {
   const [hidePass, setHidePass] = useState(true);
 
   return (
-    <View style={styles.content}>
+    <View
+      style={[
+        styles.inner,
+        activeInput && { ...styles.inner, marginBottom: 80 },
+      ]}
+    >
       <Text style={styles.text}>Увійти</Text>
-
       <Formik
         initialValues={{ email: "", password: "" }}
         onSubmit={(values) => {}}
@@ -25,6 +29,7 @@ export const LoginForm = ({ navigation }) => {
           <View style={styles.form}>
             <View style={styles.inputContainer}>
               <TextInput
+                autoComplete="off"
                 style={[
                   styles.input,
                   activeInput === "email" && styles.inputOnFocus,
@@ -41,6 +46,7 @@ export const LoginForm = ({ navigation }) => {
               />
 
               <TextInput
+                autoComplete="off"
                 style={[
                   styles.input,
                   activeInput === "password" && styles.inputOnFocus,
@@ -75,7 +81,6 @@ export const LoginForm = ({ navigation }) => {
           </View>
         )}
       </Formik>
-
       <View style={styles.signIn}>
         <Text style={styles.signInText}>Немає акаунту?</Text>
         <TouchableOpacity
@@ -90,16 +95,16 @@ export const LoginForm = ({ navigation }) => {
 };
 
 const styles = StyleSheet.create({
-  content: {
+  inner: {
     position: "relative",
     marginTop: "auto",
+    paddingTop: 32,
     paddingHorizontal: 16,
-    backgroundColor: "#ffffff",
-    borderTopRightRadius: 25,
     borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
+    backgroundColor: "#FFFFFF",
   },
   text: {
-    marginTop: 32,
     marginBottom: 32,
     fontFamily: "Roboto-Medium",
     fontSize: 30,
