@@ -1,8 +1,8 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useFonts } from "expo-font";
-import RegistrationScreen from "./src/Screens/RegistrationScreen";
-import LoginScreen from "./src/Screens/LoginScreen";
+import RegistrationScreen from "./src/Screens/RegistrationScreen/RegistrationScreen";
+import LoginScreen from "./src/Screens/LoginScreen/LoginScreen";
 
 const Stack = createNativeStackNavigator();
 
