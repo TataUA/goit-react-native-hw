@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 import {
   ImageBackground,
   Keyboard,
@@ -17,7 +18,9 @@ import SubmitBtn from "../components/SubmitBtn";
 import HidePassBtn from "../components/HidePassBtn";
 import { StyleSheet } from "react-native";
 
-const RegistrationScreen = ({ navigation }) => {
+const RegistrationScreen = () => {
+  const navigation = useNavigation();
+
   const [avatar, setAavatar] = useState(null);
   const [login, setLogin] = useState("");
   const [email, setEmail] = useState("");
@@ -130,7 +133,10 @@ const RegistrationScreen = ({ navigation }) => {
                 </View>
 
                 <SubmitBtn
-                  submitForm={handleSubmitForm}
+                  submitForm={() => {
+                    handleSubmitForm();
+                    navigation.navigate("Home");
+                  }}
                   title="Зареєструватися"
                 />
               </View>

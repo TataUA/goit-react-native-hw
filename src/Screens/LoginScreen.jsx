@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigation } from "@react-navigation/native";
 import {
   ImageBackground,
   Keyboard,
@@ -15,7 +16,9 @@ import SubmitBtn from "../components/SubmitBtn";
 import HidePassBtn from "../components/HidePassBtn";
 import { StyleSheet } from "react-native";
 
-const LoginScreen = ({ navigation }) => {
+const LoginScreen = () => {
+  const navigation = useNavigation();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [hidePass, setHidePass] = useState(true);
@@ -93,7 +96,13 @@ const LoginScreen = ({ navigation }) => {
                   />
                 </View>
 
-                <SubmitBtn submitForm={handleSubmitForm} title="Увійти" />
+                <SubmitBtn
+                  submitForm={() => {
+                    handleSubmitForm();
+                    navigation.navigate("Home");
+                  }}
+                  title="Увійти"
+                />
               </View>
 
               <TouchableOpacity
