@@ -2,10 +2,10 @@ import React from "react";
 import { TouchableOpacity, Text } from "react-native";
 import { StyleSheet } from "react-native";
 
-const SubmitBtn = ({ submitForm, title }) => {
+const SubmitBtn = ({ submitForm, title, styleBtn, styleTitle }) => {
   return (
-    <TouchableOpacity style={styles.submitBtn} onPress={submitForm}>
-      <Text style={styles.submitText}>{title}</Text>
+    <TouchableOpacity style={[styles.submitBtn, styleBtn]} onPress={submitForm}>
+      <Text style={[styles.submitText, styleTitle]}>{title}</Text>
     </TouchableOpacity>
   );
 };

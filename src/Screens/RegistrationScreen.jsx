@@ -135,7 +135,7 @@ const RegistrationScreen = () => {
                 <SubmitBtn
                   submitForm={() => {
                     handleSubmitForm();
-                    navigation.navigate("Home");
+                    navigation.navigate("BottomNav");
                   }}
                   title="Зареєструватися"
                 />

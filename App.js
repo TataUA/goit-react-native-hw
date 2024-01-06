@@ -4,8 +4,8 @@ import MainNav from "./src/routes/MainNav";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    "Roboto-Medium": require("./src/fonts/Roboto/Roboto-Medium.ttf"),
-    "Roboto-Regular": require("./src/fonts/Roboto/Roboto-Regular.ttf"),
+    "Roboto-Medium": require("./src/assets/fonts/Roboto-Medium.ttf"),
+    "Roboto-Regular": require("./src/assets/fonts/Roboto-Regular.ttf"),
   });
 
   if (!fontsLoaded) {

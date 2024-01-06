@@ -34,7 +34,7 @@ const LoginScreen = () => {
     <KeyboardAvoidingView
       style={styles.keyboard}
       behavior={Platform.OS === "ios" ? "padding" : "height"}
-      keyboardVerticalOffset={-220}
+      keyboardVerticalOffset={-235}
     >
       <TouchableWithoutFeedback
         onPress={() => {
@@ -99,7 +99,7 @@ const LoginScreen = () => {
                 <SubmitBtn
                   submitForm={() => {
                     handleSubmitForm();
-                    navigation.navigate("Home");
+                    navigation.navigate("BottomNav");
                   }}
                   title="Увійти"
                 />
